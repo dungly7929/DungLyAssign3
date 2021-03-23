@@ -7,4 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#F6DE09</color>
+    <color name="selected_bot_nav">#E80707</color>
 </resources>
