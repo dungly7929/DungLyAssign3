@@ -12,7 +12,8 @@ import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class DungActivity extends AppCompatActivity {
+public class DungActivity extends AppCompatActivity
+{
     private BottomNavigationView bNavview;
     private ViewPager vpager;
 
@@ -53,5 +54,9 @@ public class DungActivity extends AppCompatActivity {
 
     }
 
+    public void currentpen (int cp)
+    {
+
+    }
 
 }

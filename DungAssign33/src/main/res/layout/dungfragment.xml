@@ -75,6 +75,7 @@
             android:layout_height="23dp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/thick3"
+            android:onClick="thick3"
             android:background="?android:selectableItemBackground"
             />
 
@@ -83,6 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="23dp"
             android:scaleType="centerCrop"
+            android:onClick="thick2"
             app:srcCompat="@drawable/thick2"
             android:background="?android:selectableItemBackground"
             />
@@ -93,6 +95,7 @@
             android:layout_height="23dp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/thick1"
+            android:onClick="thick1"
             android:background="?android:selectableItemBackground"
             />
     </LinearLayout>
@@ -105,6 +108,51 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.087" />
+
+    <LinearLayout
+        android:layout_width="103dp"
+        android:layout_height="41dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.871"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.137">
+
+        <Button
+            android:id="@+id/btncolor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#FB0303" />
+
+        <Button
+            android:id="@+id/btncolor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#02DAF6" />
+
+        <Button
+            android:id="@+id/btncolor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#07000E" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pen Color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.821"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.087" />

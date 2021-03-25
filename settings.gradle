@@ -1,3 +1,2 @@
-include ':CanvasExample'
 include ':DungAssign33'
 rootProject.name = "DungAssign3"
