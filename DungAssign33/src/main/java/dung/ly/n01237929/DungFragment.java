@@ -1,7 +1,6 @@
+//Name: DUNG LY         ID: N01327929
 package dung.ly.n01237929;
 
-import android.graphics.Paint;
-import android.graphics.Path;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +29,7 @@ public class DungFragment extends Fragment
     {
         View view = inflater.inflate(R.layout.dungfragment,container,false);
 
-            cuscanvas = (CanvasView) view.findViewById(R.id.signature_canvas);
+            cuscanvas = (CanvasView) view.findViewById(R.id.dungsignature_canvas);
             btn = view.findViewById(R.id.clearbtn);
             btnthick1 = view.findViewById(R.id.imgbtnthick1);
             btnthick2 = view.findViewById(R.id.imgbtnthick2);

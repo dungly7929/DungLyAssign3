@@ -9,7 +9,7 @@
 
 
     <dung.ly.n01237929.CanvasView
-        android:id="@+id/signature_canvas"
+        android:id="@+id/dungsignature_canvas"
         android:layout_width="412dp"
         android:layout_height="368dp"
         android:background="@color/white"

@@ -1,3 +1,4 @@
+//Name: DUNG LY         ID: N01327929
 package dung.ly.n01237929;
 
 import android.Manifest;
@@ -28,9 +29,8 @@ import java.util.ArrayList;
 public class LyFragment extends Fragment {
     private int CALL_PERMISSION = 1;
     private View view1;
-    Button btnper, btnstart, btnstop, btn500,btn300,btn100,btn25;
+    Button btnper, btnstart, btnstop, btn500, btn300, btn100, btn25;
     AnimationDrawable mframeAnimation = null;
-    int stop = 0;
     ImageView shark;
     ArrayList<BitmapDrawable> frame = new ArrayList<BitmapDrawable>();
 
@@ -51,10 +51,13 @@ public class LyFragment extends Fragment {
             }
         });
 
+        //Start animation button
         btnstart.setOnClickListener(v -> {
             AnimationStart();
 
         });
+
+        //Stop animation button
         btnstop.setOnClickListener(v ->
         {
             if (mframeAnimation == null) {
@@ -64,6 +67,8 @@ public class LyFragment extends Fragment {
             }
 
         });
+
+        //Speed duration Button
         btn500.setOnClickListener(v ->
         {
             animationspeed(500);
@@ -123,7 +128,6 @@ public class LyFragment extends Fragment {
     }
 
     public void AnimationStart() {
-        stop = 1;
         for (int i = 1; i < 12; i++) {
             frame.add((BitmapDrawable) getResources().getDrawable(getResources().getIdentifier("shark" + i, "drawable", getActivity().getPackageName())));
         }
@@ -140,7 +144,6 @@ public class LyFragment extends Fragment {
     }
 
     private void stopAnimation() {
-        stop = 0;
         mframeAnimation.stop();
         mframeAnimation.setVisible(false, false);
 
@@ -150,7 +153,7 @@ public class LyFragment extends Fragment {
         if (mframeAnimation == null) {
             Toast.makeText(getActivity(), "No animation to run !", Toast.LENGTH_SHORT).show();
         } else {
-            if (stop == 0) {
+            if (!mframeAnimation.isRunning()) {
                 Toast.makeText(getActivity(), "You have to start animation 1st !", Toast.LENGTH_SHORT).show();
             } else {
                 mframeAnimation.unscheduleSelf(mframeAnimation);
@@ -167,7 +170,7 @@ public class LyFragment extends Fragment {
     }
 
     public void setupid() {
-        btnper = view1.findViewById(R.id.btnper);
+        btnper = view1.findViewById(R.id.dungbtnper);
         btnstart = view1.findViewById(R.id.btnstart);
         btnstop = view1.findViewById(R.id.btnstop);
         btn500 = view1.findViewById(R.id.btn500);
