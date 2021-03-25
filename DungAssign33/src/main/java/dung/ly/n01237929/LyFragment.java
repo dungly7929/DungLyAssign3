@@ -42,9 +42,9 @@ public class LyFragment extends Fragment {
         setupid();
         btnper.setOnClickListener(v -> {
             if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(getActivity(), "You're already have this permission !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.Already_have_per, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:4377708477"));
+                intent.setData(Uri.parse(getString(R.string.tel_phone_num)));
                 startActivity(intent);
             } else {
                 requestStoregePer();
@@ -61,7 +61,7 @@ public class LyFragment extends Fragment {
         btnstop.setOnClickListener(v ->
         {
             if (mframeAnimation == null) {
-                Toast.makeText(getActivity(), "No animation to Stop !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.no_animation_stop, Toast.LENGTH_SHORT).show();
             } else {
                 stopAnimation();
             }
@@ -69,40 +69,25 @@ public class LyFragment extends Fragment {
         });
 
         //Speed duration Button
-        btn500.setOnClickListener(v ->
-        {
-            animationspeed(500);
-        });
-
-        btn300.setOnClickListener(v ->
-        {
-            animationspeed(300);
-        });
-
-        btn100.setOnClickListener(v ->
-        {
-            animationspeed(100);
-        });
-
-        btn25.setOnClickListener(v ->
-        {
-            animationspeed(25);
-        });
+        btnspeed(btn500);
+        btnspeed(btn300);
+        btnspeed(btn100);
+        btnspeed(btn25);
         return view;
     }
 
     private void requestStoregePer() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.CALL_PHONE)) {
-            new AlertDialog.Builder(getActivity()).setTitle("READ EXTERNAL STORAGE PERMISSION")
-                    .setMessage("This permission need because the app need to read the external storage !")
-                    .setPositiveButton("Yes", (dialog, which) ->
+            new AlertDialog.Builder(getActivity()).setTitle(R.string.dung_ly_n01327929)
+                    .setMessage(R.string.Phone_call_Per_Ask)
+                    .setPositiveButton(R.string.Yes, (dialog, which) ->
                     {
                         ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CALL_PHONE}, CALL_PERMISSION);
-                        Snackbar.make(view1, "Permission Granted", Snackbar.LENGTH_SHORT).show();
+                        Snackbar.make(view1, R.string.Per_Granted, Snackbar.LENGTH_SHORT).show();
 
-                    }).setNegativeButton("No", (dialog, which) ->
+                    }).setNegativeButton(R.string.No, (dialog, which) ->
             {
-                Snackbar.make(view1, "Permission Denied", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(view1, R.string.Per_Denied, Snackbar.LENGTH_SHORT).show();
             }).create().show();
             ;
         } else {
@@ -118,9 +103,9 @@ public class LyFragment extends Fragment {
 
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Snackbar.make(view1, "Permission Granted", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(view1, R.string.Per_Granted, Snackbar.LENGTH_SHORT).show();
                 } else {
-                    Snackbar.make(view1, "Permission Denied", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(view1, R.string.Per_Denied, Snackbar.LENGTH_SHORT).show();
                 }
                 return;
             }
@@ -129,7 +114,7 @@ public class LyFragment extends Fragment {
 
     public void AnimationStart() {
         for (int i = 1; i < 12; i++) {
-            frame.add((BitmapDrawable) getResources().getDrawable(getResources().getIdentifier("shark" + i, "drawable", getActivity().getPackageName())));
+            frame.add((BitmapDrawable) getResources().getDrawable(getResources().getIdentifier(getString(R.string.shark) + i, getString(R.string.drawable), getActivity().getPackageName())));
         }
         mframeAnimation = new AnimationDrawable();
         mframeAnimation.setOneShot(false);
@@ -151,10 +136,10 @@ public class LyFragment extends Fragment {
 
     public void animationspeed(int number) {
         if (mframeAnimation == null) {
-            Toast.makeText(getActivity(), "No animation to run !", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), R.string.No_ani_run, Toast.LENGTH_SHORT).show();
         } else {
             if (!mframeAnimation.isRunning()) {
-                Toast.makeText(getActivity(), "You have to start animation 1st !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.you_have_to_start_ani, Toast.LENGTH_SHORT).show();
             } else {
                 mframeAnimation.unscheduleSelf(mframeAnimation);
                 mframeAnimation = null;
@@ -167,6 +152,13 @@ public class LyFragment extends Fragment {
                 mframeAnimation.run();
             }
         }
+    }
+
+    public void btnspeed(Button btn1) {
+        btn1.setOnClickListener(v ->
+        {
+            animationspeed(Integer.parseInt(btn1.getText().toString()));
+        });
     }
 
     public void setupid() {

@@ -83,10 +83,11 @@ public class DungActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
+                .setTitle(R.string.dung_ly_n01327929)
                 .setCancelable(false)
-                .setMessage("Are you sure to quit the application ?")
-                .setPositiveButton("Yes", (dialog, which) -> finish())
-                .setNegativeButton("No", (dialog, which) -> dialog.cancel())
+                .setMessage(R.string.Quit_Ask)
+                .setPositiveButton(R.string.Yes, (dialog, which) -> finish())
+                .setNegativeButton(R.string.No, (dialog, which) -> dialog.cancel())
                 .create()
                 .show();
     }

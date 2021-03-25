@@ -41,13 +41,13 @@ public class DungFragment extends Fragment
             btn.setOnClickListener(v -> cuscanvas.clear());
 
             btnthick1.setOnClickListener(v -> {cuscanvas.setBrushsize(thick1); });
-            btncolor1.setOnClickListener(v -> {cuscanvas.setColor("#FB0303");});
+            btncolor1.setOnClickListener(v -> {cuscanvas.setColor(getString(R.string.REDcolor));});
 
             btnthick2.setOnClickListener(v -> {cuscanvas.setBrushsize(thick2); });
-            btncolor2.setOnClickListener(v -> {cuscanvas.setColor("#02DAF6");});
+            btncolor2.setOnClickListener(v -> {cuscanvas.setColor(getString(R.string.AQuacolor));});
 
             btnthick3.setOnClickListener(v -> {cuscanvas.setBrushsize(thick3); });
-            btncolor3.setOnClickListener(v -> {cuscanvas.setColor("#07000E");});
+            btncolor3.setOnClickListener(v -> {cuscanvas.setColor(getString(R.string.Blackcolor));});
 
             return view;
         }

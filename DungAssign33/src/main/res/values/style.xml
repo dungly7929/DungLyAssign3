@@ -6,4 +6,7 @@
     <style name="btnfont">
         <item name="fontFamily">sans-serif-medium </item>
     </style>
+    <style name="btnfontcolor">
+        <item name="android:textColor"> #07D1CB</item>
+    </style>
 </resources>

@@ -51,7 +51,7 @@ public class N01327929Fragment extends Fragment
     }
 
     private void startAni() {
-        Toast.makeText(getActivity(), "Animation Started !", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), R.string.Animation_start, Toast.LENGTH_SHORT).show();
 
         this.earthImgview.setImageResource(R.drawable.earth);
         this.moonTmgview.setImageResource(R.drawable.moon);
@@ -70,7 +70,7 @@ public class N01327929Fragment extends Fragment
 
     private void stopAni()
     {
-        Toast.makeText(getActivity(),"Animation stopped !", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), R.string.Animation_Stop, Toast.LENGTH_SHORT).show();
         this.earthImgview.clearAnimation();
         this.moonTmgview.clearAnimation();
     }
