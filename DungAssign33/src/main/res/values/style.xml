@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Dungfragment">
+            <item name="backgroundTint"> #FB0303</item>
+    </style>
+    <style name="btnfont">
+        <item name="fontFamily">sans-serif-medium </item>
+    </style>
+</resources>
