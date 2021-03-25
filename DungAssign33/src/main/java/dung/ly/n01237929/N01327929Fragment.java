@@ -17,5 +17,6 @@ public class N01327929Fragment extends Fragment
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.n01327929fragment,container,false);
         return view;
+
     }
 }
