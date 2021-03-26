@@ -22,7 +22,7 @@ public class DungFragment extends Fragment
     private ImageButton btnthick1, btnthick2, btnthick3;
     private Button btncolor1, btncolor2, btncolor3;
     private CanvasView cuscanvas;
-    public int thick1 = 1, thick2 = 4, thick3 = 6;
+    public int thick1 = 1, thick2 = 6, thick3 = 12;
 
     @Nullable
     @Override

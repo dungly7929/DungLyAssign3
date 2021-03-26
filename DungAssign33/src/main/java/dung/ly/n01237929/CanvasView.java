@@ -30,10 +30,7 @@ public class CanvasView extends View
 
     public void setBrushsize(float nsize)
     {
-        float pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                nsize, getResources().getDisplayMetrics());
-        brushSize = pixelAmount;
-        drawPaint.setStrokeWidth(brushSize);
+        drawPaint.setStrokeWidth(nsize);
     }
 
     @Override
