@@ -20,11 +20,13 @@ public class N01327929Fragment extends Fragment
 {
     private View view1;
     private ImageView earthImgview, moonTmgview;
-    private Button btnstart,btnstop;
+    private Button btnstart, btnstop;
+
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.n01327929fragment,container,false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+    {
+        View view = inflater.inflate(R.layout.n01327929fragment, container, false);
         view1 = view;
         setupid();
 
@@ -50,7 +52,8 @@ public class N01327929Fragment extends Fragment
         btnstop = view1.findViewById(R.id.dungbtnstopani);
     }
 
-    private void startAni() {
+    private void startAni()
+    {
         Toast.makeText(getActivity(), R.string.Animation_start, Toast.LENGTH_SHORT).show();
 
         this.earthImgview.setImageResource(R.drawable.earth);

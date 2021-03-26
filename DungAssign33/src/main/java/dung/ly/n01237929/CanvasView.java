@@ -20,37 +20,44 @@ public class CanvasView extends View
     private Bitmap canvasBitmap;
     private int paintColor = 000000;
     private float brushSize, lastBrushSize;
-    public CanvasView(Context context, AttributeSet attrs){
+
+    public CanvasView(Context context, AttributeSet attrs)
+    {
         super(context, attrs);
 
         init();
     }
 
-    public void setBrushsize(float nsize){
+    public void setBrushsize(float nsize)
+    {
         float pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 nsize, getResources().getDisplayMetrics());
-        brushSize=pixelAmount;
+        brushSize = pixelAmount;
         drawPaint.setStrokeWidth(brushSize);
     }
 
     @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+    protected void onSizeChanged(int w, int h, int oldw, int oldh)
+    {
         super.onSizeChanged(w, h, oldw, oldh);
         canvasBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
         drawCanvas = new Canvas(canvasBitmap);
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas)
+    {
         canvas.drawBitmap(canvasBitmap, 0, 0, canvasPaint);
         canvas.drawPath(drawPath, drawPaint);
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
+    public boolean onTouchEvent(MotionEvent event)
+    {
         float touchX = event.getX();
         float touchY = event.getY();
-        switch (event.getAction()) {
+        switch (event.getAction())
+        {
             case MotionEvent.ACTION_DOWN:
                 drawPath.moveTo(touchX, touchY);
                 break;
@@ -68,7 +75,8 @@ public class CanvasView extends View
         return true;
     }
 
-    public void setColor(String newColor){
+    public void setColor(String newColor)
+    {
         invalidate();
         paintColor = Color.parseColor(newColor);
         drawPaint.setColor(paintColor);

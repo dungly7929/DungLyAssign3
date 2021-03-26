@@ -16,7 +16,8 @@ public class DungActivity extends AppCompatActivity
     private ViewPager vpager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -25,8 +26,10 @@ public class DungActivity extends AppCompatActivity
 
         setupViewPager();
 
-        bNavview.setOnNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()) {
+        bNavview.setOnNavigationItemSelectedListener(item ->
+        {
+            switch (item.getItemId())
+            {
                 case R.id.acttab1:
                     vpager.setCurrentItem(0);
                     break;
@@ -43,14 +46,16 @@ public class DungActivity extends AppCompatActivity
         });
     }
 
-    private void setupViewPager() {
+    private void setupViewPager()
+    {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         vpager.setAdapter(viewPagerAdapter);
 
         vpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
         {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
+            {
 
             }
 
@@ -73,7 +78,8 @@ public class DungActivity extends AppCompatActivity
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
+            public void onPageScrollStateChanged(int state)
+            {
 
             }
         });
@@ -81,7 +87,8 @@ public class DungActivity extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.dung_ly_n01327929)
                 .setCancelable(false)
