@@ -11,22 +11,26 @@ DUNG LY
 ##Fragment 1
 Allow user to draw and change the brushsize or color they can choose.
 Function setbrushsize:
+```java
     public void setBrushsize(float nsize)
     {
         drawPaint.setStrokeWidth(nsize);
     }
+```    
  Function setColort:
+ ```java
      public void setColor(String newColor)
     {
         invalidate();
         paintColor = Color.parseColor(newColor);
         drawPaint.setColor(paintColor);
     }
-
+```  
 ## Fragment 2
 Ask user for a permission to make a call
 Create a animation allow user change the speed of animation 
 Function allow user to change the speed of animation by 
+```java
     public void animationspeed(int number)
     {
         if (mframeAnimation == null)
@@ -52,11 +56,12 @@ Function allow user to change the speed of animation by
             }
         }
     }
-    
+```    
  ## Fragment 3
  Show the textview on top left and right with rotation
  Create a animation the moon run around the eartth.
  Funtion to start animation:
+ ```java
      private void startAni()
     {
         Toast.makeText(getActivity(), R.string.Animation_start, Toast.LENGTH_SHORT).show();
@@ -75,6 +80,7 @@ Function allow user to change the speed of animation by
         this.moonTmgview.startAnimation(mAnimation);
         this.earthImgview.startAnimation(eAnimation);
     }
+ ```   
 AnimationUtils use to load animation on ani source on Drawable
 
  
