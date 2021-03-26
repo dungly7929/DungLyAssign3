@@ -2,10 +2,10 @@
 DungLyAssign3 is a project used to pratice about 
 Fragments, Drawing activity , animation .
 
-##Installation
+## Installation
 Use as apk file to install to use
 
-##Contribution
+## Contribution
 DUNG LY
 
 ##Fragment 1
@@ -23,7 +23,7 @@ Function setbrushsize:
         drawPaint.setColor(paintColor);
     }
 
-##Fragment 2
+## Fragment 2
 Ask user for a permission to make a call
 Create a animation allow user change the speed of animation 
 Function allow user to change the speed of animation by 
@@ -53,7 +53,7 @@ Function allow user to change the speed of animation by
         }
     }
     
- ##Fragment 3
+ ## Fragment 3
  Show the textview on top left and right with rotation
  Create a animation the moon run around the eartth.
  Funtion to start animation:
